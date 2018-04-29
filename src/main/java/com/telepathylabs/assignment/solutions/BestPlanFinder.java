@@ -27,6 +27,7 @@ public class BestPlanFinder {
 								new Feature("Email"),
 								new Feature("Hosting"),
 								new Feature("Phone"),
+								new Feature("SSL"),
 								new Feature("Cloud")
 					}),
 	    			new Plan(
@@ -64,7 +65,7 @@ public class BestPlanFinder {
 	 */
 	private void printBestPlan(Optional<Plan> plan) {
 		if(plan.isPresent()) {
-    		System.out.println(String.format("Fot the selected feature(s) : %s", 
+    		System.out.println(String.format("For the selected feature(s) : %s",
     				Arrays.stream(getSelectedFeatures()).map(l -> l.getName()).collect(Collectors.toList()) ));
     		
     		System.out.println(String.format("The best plan is : %s", plan.get().getName()));

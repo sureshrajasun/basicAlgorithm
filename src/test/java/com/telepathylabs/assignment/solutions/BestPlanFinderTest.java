@@ -16,7 +16,10 @@ public class BestPlanFinderTest {
     @BeforeClass
     public static void populateValues(){
         bestPlanFinder = new BestPlanFinder();
-        bestPlanFinder.setSelectedFeatures(new Feature[]{new Feature("Email"), new Feature("Hosting")});
+        bestPlanFinder.setSelectedFeatures(new Feature[]{
+                                                    new Feature("Email"),
+                                                    new Feature("Hosting")}
+                                                );
 
         bestPlanFinder. setAllPlans(
                 new Plan[]{
@@ -57,10 +60,18 @@ public class BestPlanFinderTest {
     }
 
     @Test
-    public void testBestPlanFinderMatching() {
+    public void testBestPlanFinderMatching1() {
         bestPlanFinder.setSelectedFeatures(new Feature[]{ new Feature("Hosting")});
         Optional<Plan> plan = bestPlanFinder.findBestPlan();
         assertEquals("Basic",plan.get().getName());
+
+    }
+
+    @Test
+    public void testBestPlanFinderMatching2() {
+        bestPlanFinder.setSelectedFeatures(new Feature[]{new Feature("Email")});
+        Optional<Plan> plan = bestPlanFinder.findBestPlan();
+        assertEquals("Free",plan.get().getName());
 
     }
 
@@ -74,10 +85,12 @@ public class BestPlanFinderTest {
 
     @Test
     public void testBestPlanFinderNotMatching2() {
-        bestPlanFinder.setSelectedFeatures(new Feature[]{new Feature("Email")});
+        bestPlanFinder.setSelectedFeatures(new Feature[]{new Feature("Nothing")});
         Optional<Plan> plan = bestPlanFinder.findBestPlan();
-        assertEquals("Free",plan.get().getName());
+        assertTrue(!plan.isPresent());
 
     }
+
+
 
 }
