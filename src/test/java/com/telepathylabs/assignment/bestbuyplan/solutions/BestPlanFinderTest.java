@@ -1,7 +1,8 @@
-package com.telepathylabs.assignment.solutions;
+package com.telepathylabs.assignment.bestbuyplan.solutions;
 
-import com.telepathylabs.assignment.bean.Feature;
-import com.telepathylabs.assignment.bean.Plan;
+import com.telepathylabs.assignment.bestbuyplan.BestPlanFinder;
+import com.telepathylabs.assignment.bestbuyplan.bean.Feature;
+import com.telepathylabs.assignment.bestbuyplan.bean.Plan;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;

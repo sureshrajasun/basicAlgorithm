@@ -1,6 +1,4 @@
-package com.telepathylabs.assignment.bean;
-
-import com.telepathylabs.assignment.bean.Feature;
+package com.telepathylabs.assignment.bestbuyplan.bean;
 
 public class Plan {
 

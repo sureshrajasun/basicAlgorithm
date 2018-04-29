@@ -1,7 +1,7 @@
-package com.telepathylabs.assignment.solutions;
+package com.telepathylabs.assignment.bestbuyplan;
 
-import com.telepathylabs.assignment.bean.Feature;
-import com.telepathylabs.assignment.bean.Plan;
+import com.telepathylabs.assignment.bestbuyplan.bean.Feature;
+import com.telepathylabs.assignment.bestbuyplan.bean.Plan;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class BestPlanFinder {
-	private Plan[] 		allPlans;                    // this is the list of plans available instantiated as per the above
+	private Plan[] 		allPlans;                 // this is the list of plans available instantiated as per the above
 	private Feature[] 	selectedFeatures;         // this is the list of features the user wants -> find
 	
 	private void setPlanDetailsAndFeaturesData() {
@@ -22,7 +22,7 @@ public class BestPlanFinder {
 				new Plan[]{
 	    			new Plan(
 	    					"Business",
-	    					10D,
+	    					180.50D,
 	    					new Feature[] {
 								new Feature("Email"),
 								new Feature("Hosting"),
@@ -32,7 +32,7 @@ public class BestPlanFinder {
 					}),
 	    			new Plan(
 	    					"Basic",
-	    					5D,
+	    					110.50D,
 	    					new Feature[] {
 								new Feature("Email"),
 								new Feature("SSL"),
@@ -75,8 +75,7 @@ public class BestPlanFinder {
     	}
 	}
 	/**
-	 * @param allPlans
-	 * @param selectedFeatures
+	 *
 	 */
 	public Optional<Plan> findBestPlan() {
 		List<Plan> matchedPlans;
@@ -89,7 +88,6 @@ public class BestPlanFinder {
 	/**
 	 * @param allPlans
 	 * @param selectedFeatures
-	 * @param matchedPlan
 	 */
 	private List<Plan> getAllPlansForFeatures(Plan[] allPlans, Feature[] selectedFeatures) {
 		List<Plan> matchedPlans = new ArrayList();

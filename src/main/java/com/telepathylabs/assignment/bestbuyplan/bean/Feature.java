@@ -1,4 +1,4 @@
-package com.telepathylabs.assignment.bean;
+package com.telepathylabs.assignment.bestbuyplan.bean;
 
 public class Feature {
     private String name;
